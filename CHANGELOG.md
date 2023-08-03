@@ -1,5 +1,10 @@
 # Release Notes
 
+
+## v1.0.1 (2023-08-03)
+
+- docker compose
+
 ## v1.0.0 (2023-07-07)
 
 node js v18.12.1.
