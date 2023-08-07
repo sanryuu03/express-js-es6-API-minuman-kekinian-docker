@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  express-js-google-drive-api:
-    container_name: 'express-js-google-drive-api'
+  express-js-es6-docker:
+    container_name: 'express-js-es6-docker'
     build:
       context: "."
       dockerfile: Dockerfile

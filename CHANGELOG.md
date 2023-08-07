@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.2 (2023-08-07)
+
+- docker compose change container_name
+
 ## v1.0.1 (2023-08-03)
 
 - docker compose
