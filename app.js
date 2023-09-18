@@ -13,7 +13,7 @@ app.use(cors())
 app.use(helmet())
 
 app.get('/', (req, res) => {
-  res.send(`express js es6 docker ⚡ server ${port}`)
+  res.send(`express js es6 API minuman kekinian docker ⚡ server ${port}`)
 })
 
 app.listen(port, () => console.log(`running ⚡ port: ${port}`))

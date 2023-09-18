@@ -1,12 +1,12 @@
 version: "3.8"
 
 services:
-  express-js-es6-docker:
-    container_name: 'express-js-es6-docker'
+  express-js-es6-api-minuman-kekinian-docker:
+    container_name: 'express-js-es6-api-minuman-kekinian-docker'
     build:
       context: "."
       dockerfile: Dockerfile
-    image: "express-js-es6-docker:1.0.0"
+    image: "express-js-es6-api-minuman-kekinian-docker:1.0.0"
     environment:
       - "NODE_ENV=development"
     ports:

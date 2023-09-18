@@ -1,7 +1,7 @@
 {
-  "name": "express-js-es6",
+  "name": "express-js-es6-api-minuman-kekinian-docker",
   "version": "1.0.0",
-  "description": "express-js-es6",
+  "description": "express-js-es6-api-minuman-kekinian-docker",
   "type": "module",
   "main": "app.js",
   "scripts": {
