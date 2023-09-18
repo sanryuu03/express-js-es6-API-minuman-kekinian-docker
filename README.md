@@ -41,7 +41,11 @@ This is a [express.js](https://expressjs.com/) with es6.
 
 - masuk ke dalam container
 
-      docker exec -i -t express-js-google-drive-api /bin/bash
+      docker exec -i -t express-js-es6-api-minuman-kekinian-docker /bin/bash
+
+      jika node:18.17.0-alpine
+
+      docker exec -i -t express-js-es6-api-minuman-kekinian-docker /bin/sh
 
 - list file
 

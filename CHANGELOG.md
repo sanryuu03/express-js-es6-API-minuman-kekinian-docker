@@ -1,6 +1,13 @@
 # Release Notes
 
 
+## v1.0.4 (2023-09-18)
+
+- npm install prisma --save-dev
+- npx prisma
+- npx prisma init
+- npx prisma migrate dev --name init
+
 ## v1.0.3 (2023-09-18)
 
 - API minuman kekinian
