@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.7 (2023-09-20)
+
+- transaction
+
 ## v1.0.6 (2023-09-20)
 
 - uuid

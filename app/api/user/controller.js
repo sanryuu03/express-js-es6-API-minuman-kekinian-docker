@@ -43,7 +43,9 @@ export const createUser = async(req,res)=>{
             custom_unix_createdAt: customUnix,
             custom_unix_updatedAt: customUnix
           }
-          const response = await prisma.user.create({data: formData})
+          const response = await prisma.$transaction([
+            prisma.user.create({data: formData})
+          ])
           const umpanBalik = {
             error: false,
             message: 'success',
