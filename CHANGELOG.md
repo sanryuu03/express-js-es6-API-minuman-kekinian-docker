@@ -1,6 +1,13 @@
 # Release Notes
 
 
+## v1.0.6 (2023-09-20)
+
+- uuid
+- npm i nanoid
+- npx prisma migrate dev --name user
+- createUser
+
 ## v1.0.5 (2023-09-20)
 
 - connect db to xampp

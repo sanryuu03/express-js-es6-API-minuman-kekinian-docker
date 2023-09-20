@@ -2,32 +2,32 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  uuid   String   @unique
-  referral String?
-  name    String?
-  email   String   @unique
-  email_verified_at    String?
-  password   String?
-  profile_picture_path String?
-  status String?
-  keterangan String?
-  other String?
-  alasan_ditolak String?
-  post_by String?
-  edited_by String?
-  deleted_by String?
-  createdAt DateTime @default(now())
-  custom_unix_createdAt String?
-  updatedAt DateTime @updatedAt
-  custom_unix_updatedAt String?
+    id                    Int      @id @default(autoincrement())
+    uuid                  String   @db.VarChar(10000) @unique
+    referral              String   @db.VarChar(255) @default("kosong")
+    name                  String   @db.VarChar(255)
+    email                 String   @unique
+    email_verified_at     String   @db.VarChar(255) @default("kosong")
+    password              String   @db.VarChar(255)
+    profile_picture_path  String   @db.VarChar(255) @default("kosong")
+    status                String   @db.VarChar(255) @default("kosong")
+    keterangan            String   @db.VarChar(255) @default("kosong")
+    other                 String   @db.VarChar(255) @default("kosong")
+    alasan_ditolak        String   @db.VarChar(255) @default("kosong")
+    post_by               String   @db.VarChar(255) @default("kosong")
+    edited_by             String   @db.VarChar(255) @default("kosong")
+    deleted_by            String   @db.VarChar(255) @default("kosong")
+    createdAt             DateTime @default(now())
+    custom_unix_createdAt Int?
+    updatedAt             DateTime @updatedAt
+    custom_unix_updatedAt Int?
 }
