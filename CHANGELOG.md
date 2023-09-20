@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.11 (2023-09-20)
+
+- npx prisma migrate dev --name master_product
+- npx prisma migrate dev --name master_size
+- npx prisma migrate reset --force atau npx prisma db seed
+
 ## v1.0.10 (2023-09-20)
 
 - Soft delete

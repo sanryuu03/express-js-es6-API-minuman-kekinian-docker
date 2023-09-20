@@ -33,3 +33,47 @@ model User {
     deleted                 Boolean  @default(false)
     custom_unix_soft_delete Int?
 }
+
+model Master_Product {
+    id                      Int      @id @default(autoincrement())
+    uuid                    String   @unique @db.VarChar(10000)
+    user_id                 String   @default("kosong") @db.VarChar(255)
+    name                    String   @db.VarChar(255)
+    description             String   @default("kosong") @db.VarChar(255)
+    ingredients             String   @default("kosong") @db.VarChar(255)
+    price                   Int      @default(0)
+    picture_path            String   @default("kosong") @db.VarChar(255)
+    status                  String   @default("kosong") @db.VarChar(255)
+    keterangan              String   @default("kosong") @db.VarChar(255)
+    other                   String   @default("kosong") @db.VarChar(255)
+    alasan_ditolak          String   @default("kosong") @db.VarChar(255)
+    post_by                 String   @default("kosong") @db.VarChar(255)
+    edited_by               String   @default("kosong") @db.VarChar(255)
+    deleted_by              String   @default("kosong") @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    custom_unix_createdAt   Int?
+    updatedAt               DateTime @updatedAt
+    custom_unix_updatedAt   Int?
+    deleted                 Boolean  @default(false)
+    custom_unix_soft_delete Int?
+}
+
+model Master_Size {
+    id                      Int      @id @default(autoincrement())
+    uuid                    String   @unique @db.VarChar(10000)
+    name                    String   @db.VarChar(255)
+    size                    String   @default("kosong") @db.VarChar(255)
+    status                  String   @default("kosong") @db.VarChar(255)
+    keterangan              String   @default("kosong") @db.VarChar(255)
+    other                   String   @default("kosong") @db.VarChar(255)
+    alasan_ditolak          String   @default("kosong") @db.VarChar(255)
+    post_by                 String   @default("kosong") @db.VarChar(255)
+    edited_by               String   @default("kosong") @db.VarChar(255)
+    deleted_by              String   @default("kosong") @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    custom_unix_createdAt   Int?
+    updatedAt               DateTime @updatedAt
+    custom_unix_updatedAt   Int?
+    deleted                 Boolean  @default(false)
+    custom_unix_soft_delete Int?
+}
