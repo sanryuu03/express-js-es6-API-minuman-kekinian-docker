@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.8 (2023-09-20)
+
+- updateUser
+
 ## v1.0.7 (2023-09-20)
 
 - transaction

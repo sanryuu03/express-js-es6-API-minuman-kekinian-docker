@@ -63,6 +63,42 @@ export const createUser = async(req,res)=>{
       }
 }
 
-export const updateUser = (req,res)=>{}
+export const updateUser = async(req,res)=>{
+    const { uuid } = req.params
+    const {
+        name,
+        email,
+        password,
+      } = req.body
+
+      try {
+        const formData = {
+            name,
+            email,
+            password,
+            edited_by: email,
+            custom_unix_updatedAt: customUnix
+          }
+          const response = await prisma.$transaction([
+            prisma.user.update({
+                where: { uuid: uuid },
+                data: formData})
+          ])
+          const umpanBalik = {
+            error: false,
+            message: 'success',
+            data: response
+          }
+
+          return res.status(201).json({ umpanBalik })
+      } catch (err) {
+        const umpanBalik = {
+            error: true,
+            message: err.message,
+            data: 'kosong'
+          }
+          return res.status(500).json({ umpanBalik: umpanBalik || `Internal server error` })
+      }
+}
 
 export const deleteUser = (req,res)=>{}
