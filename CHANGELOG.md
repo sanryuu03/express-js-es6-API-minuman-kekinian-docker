@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.13 (2023-09-20)
+
+- CRUD master size
+
 ## v1.0.12 (2023-09-20)
 
 - npx prisma migrate dev --name product_price

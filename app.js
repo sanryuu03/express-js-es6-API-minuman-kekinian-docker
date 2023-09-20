@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import cors from "cors"
 import helmet from "helmet"
 import userRoutes from "./app/api/user/router.js"
+import masterSizeRoutes from "./app/api/masterSize/router.js"
 
 dotenv.config()
 
@@ -19,5 +20,6 @@ app.get('/', (req, res) => {
 
 const URL = `/api/v1`
 app.use(`${URL}`, userRoutes);
+app.use(`${URL}`, masterSizeRoutes);
 
 app.listen(port, () => console.log(`running ⚡ port: ${port}`))
