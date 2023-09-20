@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.10 (2023-09-20)
+
+- Soft delete
+- npx prisma migrate dev --name add_soft_delete_user
+- deleteUser
+
 ## v1.0.9 (2023-09-20)
 
 - deleteUser

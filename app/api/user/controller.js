@@ -7,7 +7,11 @@ let customUnix = Math.floor(new Date().getTime() / 1000.0)
 
 export const getUsers = async(req,res)=>{
     try {
-        const response = await prisma.user.findMany()
+        const response = await prisma.user.findMany({
+            where: {
+                deleted: false
+            }
+        })
         const umpanBalik = {
             error: false,
             message: 'success',
@@ -104,7 +108,25 @@ export const updateUser = async(req,res)=>{
 export const deleteUser = async(req,res)=>{
     const { uuid } = req.params
     try {
+        prisma.$use(async (params, next) => {
+            // Check incoming query type
+              if (params.action == 'delete') {
+                // Delete queries
+                // Change action to an update
+                params.action = 'update'
+                params.args['data'] = { deleted: true }
+              }
+            return next(params)
+          })
+
+        const formData = {
+            deleted_by: uuid,
+            custom_unix_soft_delete: customUnix
+          }
         const response = await prisma.$transaction([
+            prisma.user.update({
+                where: { uuid: uuid },
+                data: formData}),
             prisma.user.delete({
                 where: { uuid: uuid }})
           ])

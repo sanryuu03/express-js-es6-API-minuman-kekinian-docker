@@ -11,23 +11,25 @@ datasource db {
 }
 
 model User {
-    id                    Int      @id @default(autoincrement())
-    uuid                  String   @db.VarChar(10000) @unique
-    referral              String   @db.VarChar(255) @default("kosong")
-    name                  String   @db.VarChar(255)
-    email                 String   @unique
-    email_verified_at     String   @db.VarChar(255) @default("kosong")
-    password              String   @db.VarChar(255)
-    profile_picture_path  String   @db.VarChar(255) @default("kosong")
-    status                String   @db.VarChar(255) @default("kosong")
-    keterangan            String   @db.VarChar(255) @default("kosong")
-    other                 String   @db.VarChar(255) @default("kosong")
-    alasan_ditolak        String   @db.VarChar(255) @default("kosong")
-    post_by               String   @db.VarChar(255) @default("kosong")
-    edited_by             String   @db.VarChar(255) @default("kosong")
-    deleted_by            String   @db.VarChar(255) @default("kosong")
-    createdAt             DateTime @default(now())
-    custom_unix_createdAt Int?
-    updatedAt             DateTime @updatedAt
-    custom_unix_updatedAt Int?
+    id                      Int      @id @default(autoincrement())
+    uuid                    String   @unique @db.VarChar(10000)
+    referral                String   @default("kosong") @db.VarChar(255)
+    name                    String   @db.VarChar(255)
+    email                   String   @unique
+    email_verified_at       String   @default("kosong") @db.VarChar(255)
+    password                String   @db.VarChar(255)
+    profile_picture_path    String   @default("kosong") @db.VarChar(255)
+    status                  String   @default("kosong") @db.VarChar(255)
+    keterangan              String   @default("kosong") @db.VarChar(255)
+    other                   String   @default("kosong") @db.VarChar(255)
+    alasan_ditolak          String   @default("kosong") @db.VarChar(255)
+    post_by                 String   @default("kosong") @db.VarChar(255)
+    edited_by               String   @default("kosong") @db.VarChar(255)
+    deleted_by              String   @default("kosong") @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    custom_unix_createdAt   Int?
+    updatedAt               DateTime @updatedAt
+    custom_unix_updatedAt   Int?
+    deleted                 Boolean  @default(false)
+    custom_unix_soft_delete Int?
 }
