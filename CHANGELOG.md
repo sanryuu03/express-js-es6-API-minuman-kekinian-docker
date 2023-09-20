@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.9 (2023-09-20)
+
+- deleteUser
+
 ## v1.0.8 (2023-09-20)
 
 - updateUser
