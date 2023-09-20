@@ -1,6 +1,11 @@
 # Release Notes
 
 
+## v1.0.12 (2023-09-20)
+
+- npx prisma migrate dev --name product_price
+- npx prisma migrate dev --name transactions
+
 ## v1.0.11 (2023-09-20)
 
 - npx prisma migrate dev --name master_product

@@ -41,7 +41,6 @@ model Master_Product {
     name                    String   @db.VarChar(255)
     description             String   @default("kosong") @db.VarChar(255)
     ingredients             String   @default("kosong") @db.VarChar(255)
-    price                   Int      @default(0)
     picture_path            String   @default("kosong") @db.VarChar(255)
     status                  String   @default("kosong") @db.VarChar(255)
     keterangan              String   @default("kosong") @db.VarChar(255)
@@ -63,6 +62,58 @@ model Master_Size {
     uuid                    String   @unique @db.VarChar(10000)
     name                    String   @db.VarChar(255)
     size                    String   @default("kosong") @db.VarChar(255)
+    status                  String   @default("kosong") @db.VarChar(255)
+    keterangan              String   @default("kosong") @db.VarChar(255)
+    other                   String   @default("kosong") @db.VarChar(255)
+    alasan_ditolak          String   @default("kosong") @db.VarChar(255)
+    post_by                 String   @default("kosong") @db.VarChar(255)
+    edited_by               String   @default("kosong") @db.VarChar(255)
+    deleted_by              String   @default("kosong") @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    custom_unix_createdAt   Int?
+    updatedAt               DateTime @updatedAt
+    custom_unix_updatedAt   Int?
+    deleted                 Boolean  @default(false)
+    custom_unix_soft_delete Int?
+}
+
+model Product_Price {
+    id                      Int      @id @default(autoincrement())
+    uuid                    String   @unique @db.VarChar(10000)
+    product_id              String   @default("kosong") @db.VarChar(255)
+    size_id                 String   @default("kosong") @db.VarChar(255)
+    is_promo                Boolean  @default(false)
+    price                   Int      @default(0)
+    status                  String   @default("kosong") @db.VarChar(255)
+    keterangan              String   @default("kosong") @db.VarChar(255)
+    other                   String   @default("kosong") @db.VarChar(255)
+    alasan_ditolak          String   @default("kosong") @db.VarChar(255)
+    post_by                 String   @default("kosong") @db.VarChar(255)
+    edited_by               String   @default("kosong") @db.VarChar(255)
+    deleted_by              String   @default("kosong") @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    custom_unix_createdAt   Int?
+    updatedAt               DateTime @updatedAt
+    custom_unix_updatedAt   Int?
+    deleted                 Boolean  @default(false)
+    custom_unix_soft_delete Int?
+}
+
+model Transactions {
+    id                      Int      @id @default(autoincrement())
+    uuid                    String   @unique @db.VarChar(10000)
+    product_id              String   @default("kosong") @db.VarChar(255)
+    product_price_id        String   @default("kosong") @db.VarChar(255)
+    is_promo                Boolean  @default(false)
+    quantity                Int      @default(0)
+    price                   Int      @default(0)
+    amount                  Int      @default(0)
+    is_paid                 Boolean  @default(false)
+    buyer                   String   @default("kosong") @db.VarChar(255)
+    buyer_phone_number      String   @default("kosong") @db.VarChar(255)
+    buyer_email             String   @default("kosong") @db.VarChar(255)
+    buyer_address           String   @default("kosong") @db.VarChar(255)
+    purchase_date           Int      @default(0)
     status                  String   @default("kosong") @db.VarChar(255)
     keterangan              String   @default("kosong") @db.VarChar(255)
     other                   String   @default("kosong") @db.VarChar(255)

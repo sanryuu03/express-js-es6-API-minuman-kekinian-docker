@@ -1,13 +1,19 @@
 -- CreateTable
-CREATE TABLE `Master_Product` (
+CREATE TABLE `Transactions` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(10000) NOT NULL,
-    `user_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
-    `name` VARCHAR(255) NOT NULL,
-    `description` VARCHAR(255) NOT NULL DEFAULT 'kosong',
-    `ingredients` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `product_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `product_price_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `is_promo` BOOLEAN NOT NULL DEFAULT false,
+    `quantity` INTEGER NOT NULL DEFAULT 0,
     `price` INTEGER NOT NULL DEFAULT 0,
-    `picture_path` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `amount` INTEGER NOT NULL DEFAULT 0,
+    `is_paid` BOOLEAN NOT NULL DEFAULT false,
+    `buyer` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `buyer_phone_number` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `buyer_email` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `buyer_address` VARCHAR(255) NOT NULL DEFAULT 'kosong',
+    `purchase_date` INTEGER NOT NULL DEFAULT 0,
     `status` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `keterangan` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `other` VARCHAR(255) NOT NULL DEFAULT 'kosong',
@@ -22,6 +28,6 @@ CREATE TABLE `Master_Product` (
     `deleted` BOOLEAN NOT NULL DEFAULT false,
     `custom_unix_soft_delete` INTEGER NULL,
 
-    UNIQUE INDEX `Master_Product_uuid_key`(`uuid`),
+    UNIQUE INDEX `Transactions_uuid_key`(`uuid`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
