@@ -1,6 +1,11 @@
 # Release Notes
 
 
+## v1.0.15 (2023-09-29)
+
+- update Master_Product with or without upload gambar/image by master_product_id and user id
+- delete Master_Product by master_product_id and user id
+
 ## v1.0.14 (2023-09-29)
 
 - npm i multer
