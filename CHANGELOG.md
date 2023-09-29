@@ -1,6 +1,13 @@
 # Release Notes
 
 
+## v1.0.14 (2023-09-29)
+
+- npm i multer
+- create Master_Product with upload gambar/image
+- read Master_Product by user id
+- fix ReferenceError: __dirname is not defined in ES module scope
+
 ## v1.0.13 (2023-09-20)
 
 - CRUD master size
