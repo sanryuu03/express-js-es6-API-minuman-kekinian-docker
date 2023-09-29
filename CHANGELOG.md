@@ -1,6 +1,11 @@
 # Release Notes
 
 
+## v1.0.16 (2023-09-29)
+
+- CRUD product price
+- validasi checkProductPrice when  create
+
 ## v1.0.15 (2023-09-29)
 
 - update Master_Product with or without upload gambar/image by master_product_id and user id
