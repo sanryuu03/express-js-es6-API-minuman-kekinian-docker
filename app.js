@@ -6,6 +6,7 @@ import userRoutes from "./app/api/user/router.js"
 import masterSizeRoutes from "./app/api/masterSize/router.js"
 import masterProductRoutes from "./app/api/masterProduct/router.js"
 import productPriceRoutes from "./app/api/productPrice/router.js"
+import transactionsRoutes from "./app/api/transactions/router.js"
 
 dotenv.config()
 
@@ -25,5 +26,6 @@ app.use(`${URL}`, userRoutes);
 app.use(`${URL}`, masterSizeRoutes);
 app.use(`${URL}`, masterProductRoutes);
 app.use(`${URL}`, productPriceRoutes);
+app.use(`${URL}`, transactionsRoutes);
 
 app.listen(port, () => console.log(`running ⚡ port: ${port}`))

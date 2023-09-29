@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.17 (2023-09-29)
+
+- CRUD Transactions
+
 ## v1.0.16 (2023-09-29)
 
 - CRUD product price
