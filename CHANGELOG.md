@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.18 (2023-09-30)
+
+- revisi createUser => password
+
 ## v1.0.17 (2023-09-29)
 
 - CRUD Transactions
