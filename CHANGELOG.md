@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.19 (2023-09-30)
+
+- auth signIn
+
 ## v1.0.18 (2023-09-30)
 
 - revisi createUser => password
