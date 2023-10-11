@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE `Master_Product` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `uuid` VARCHAR(10000) NOT NULL,
+    `uuid` VARCHAR(255) NOT NULL,
     `user_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `name` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL DEFAULT 'kosong',

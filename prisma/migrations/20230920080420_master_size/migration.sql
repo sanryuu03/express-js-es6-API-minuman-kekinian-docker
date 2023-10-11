@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE `Master_Size` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `uuid` VARCHAR(10000) NOT NULL,
+    `uuid` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `size` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `status` VARCHAR(255) NOT NULL DEFAULT 'kosong',

@@ -12,7 +12,7 @@ datasource db {
 
 model User {
     id                      Int      @id @default(autoincrement())
-    uuid                    String   @unique @db.VarChar(10000)
+    uuid                    String   @unique @db.VarChar(255)
     referral                String   @default("kosong") @db.VarChar(255)
     name                    String   @db.VarChar(255)
     email                   String   @unique
@@ -36,7 +36,7 @@ model User {
 
 model Master_Product {
     id                      Int      @id @default(autoincrement())
-    uuid                    String   @unique @db.VarChar(10000)
+    uuid                    String   @unique @db.VarChar(255)
     user_id                 String   @default("kosong") @db.VarChar(255)
     name                    String   @db.VarChar(255)
     description             String   @default("kosong") @db.VarChar(255)
@@ -59,7 +59,7 @@ model Master_Product {
 
 model Master_Size {
     id                      Int      @id @default(autoincrement())
-    uuid                    String   @unique @db.VarChar(10000)
+    uuid                    String   @unique @db.VarChar(255)
     name                    String   @db.VarChar(255)
     size                    String   @default("kosong") @db.VarChar(255)
     status                  String   @default("kosong") @db.VarChar(255)
@@ -79,7 +79,7 @@ model Master_Size {
 
 model Product_Price {
     id                      Int      @id @default(autoincrement())
-    uuid                    String   @unique @db.VarChar(10000)
+    uuid                    String   @unique @db.VarChar(255)
     product_id              String   @default("kosong") @db.VarChar(255)
     size_id                 String   @default("kosong") @db.VarChar(255)
     is_promo                Boolean  @default(false)
@@ -101,7 +101,7 @@ model Product_Price {
 
 model Transactions {
     id                      Int      @id @default(autoincrement())
-    uuid                    String   @unique @db.VarChar(10000)
+    uuid                    String   @unique @db.VarChar(255)
     product_id              String   @default("kosong") @db.VarChar(255)
     product_price_id        String   @default("kosong") @db.VarChar(255)
     is_promo                Boolean  @default(false)

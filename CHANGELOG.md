@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.20 (2023-10-11)
+
+- setup docker
+- docker exec -i -t express-js-es6-api-minuman-kekinian-docker /bin/sh
+- Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again. solusi => npx prisma generate
+
 ## v1.0.19 (2023-09-30)
 
 - auth signIn

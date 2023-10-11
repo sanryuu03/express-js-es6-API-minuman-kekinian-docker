@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE `Transactions` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `uuid` VARCHAR(10000) NOT NULL,
+    `uuid` VARCHAR(255) NOT NULL,
     `product_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `product_price_id` VARCHAR(255) NOT NULL DEFAULT 'kosong',
     `is_promo` BOOLEAN NOT NULL DEFAULT false,
