@@ -104,6 +104,37 @@ export const createProduct = async (req, res) => {
     }
 }
 
+export const editProduct = async (req, res) => {
+    const { master_product_id } = req.params
+    const user_id = req.params.userid
+
+    try {
+        const response = await prisma.$transaction([
+            prisma.Master_Product.findFirst({
+                where: {
+                    uuid: master_product_id,
+                    user_id,
+                    deleted: false
+                }
+            })
+        ])
+        const umpanBalik = {
+            error: false,
+            message: 'success',
+            data: response
+        }
+
+        return res.status(201).json({ umpanBalik })
+    } catch (err) {
+        const umpanBalik = {
+            error: true,
+            message: err.message,
+            data: 'kosong'
+        }
+        return res.status(500).json({ umpanBalik: umpanBalik || `Internal server error` })
+    }
+}
+
 export const updateProduct = async (req, res) => {
     const { master_product_id } = req.params
     const user_id = req.params.userid

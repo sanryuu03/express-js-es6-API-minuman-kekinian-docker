@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.21 (2023-10-12)
+
+- edit Master_Product by master_product_id and user id
+
 ## v1.0.20 (2023-10-11)
 
 - setup docker
