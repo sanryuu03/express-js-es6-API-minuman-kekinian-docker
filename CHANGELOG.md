@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.22 (2023-10-12)
+
+- path image folder public
+
 ## v1.0.21 (2023-10-12)
 
 - edit Master_Product by master_product_id and user id

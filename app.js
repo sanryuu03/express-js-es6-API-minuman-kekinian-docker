@@ -2,6 +2,8 @@ import express from "express"
 import dotenv from "dotenv"
 import cors from "cors"
 import helmet from "helmet"
+import path from "path"
+import { rootPath } from "./config/index.js"
 import userRoutes from "./app/api/user/router.js"
 import masterSizeRoutes from "./app/api/masterSize/router.js"
 import masterProductRoutes from "./app/api/masterProduct/router.js"
@@ -16,6 +18,7 @@ const port = process.env.PORT ?? "3000"
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static(path.join(rootPath, 'public')));
 app.use(helmet())
 
 app.get('/', (req, res) => {
