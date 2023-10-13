@@ -1,6 +1,11 @@
 # Release Notes
 
 
+## v1.0.23 (2023-10-13)
+
+- edit Master size
+- delete  Master size by size_id and user id
+
 ## v1.0.22 (2023-10-12)
 
 - path image folder public
