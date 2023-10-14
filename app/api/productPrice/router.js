@@ -1,12 +1,13 @@
 import express from "express";
-import { getProductPrice, createProductPrice, updateProductPrice, deleteProductPrice } from "./controller.js";
+import { getAllProductPrice, createProductPrice, editProductPrice, updateProductPrice, deleteProductPrice } from "./controller.js";
 
 const router = express.Router();
 
 const urlRouter = '/productPrice'
-router.get(`${urlRouter}/masterProduct/:master_product_id`, getProductPrice);
+router.get(`${urlRouter}`, getAllProductPrice);
 router.post(`${urlRouter}`, createProductPrice);
-router.put(`${urlRouter}/:product_price_id/masterProduct/:master_product_id`, updateProductPrice);
-router.delete(`${urlRouter}/:product_price_id/masterProduct/:master_product_id`, deleteProductPrice);
+router.get(`${urlRouter}/masterProduct/:uuid`, editProductPrice);
+router.put(`${urlRouter}/:product_price_id`, updateProductPrice);
+router.delete(`${urlRouter}/:product_price_id/user/:userid`, deleteProductPrice);
 
 export default router

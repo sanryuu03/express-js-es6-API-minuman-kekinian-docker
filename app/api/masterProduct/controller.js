@@ -124,7 +124,7 @@ export const editProduct = async (req, res) => {
             data: response
         }
 
-        return res.status(201).json({ umpanBalik })
+        return res.status(200).json({ umpanBalik })
     } catch (err) {
         const umpanBalik = {
             error: true,

@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.24 (2023-10-14)
+
+- get All Product Price
+- edit Product Price
+- delete  Product Price by product_price_id and user id
+
 ## v1.0.23 (2023-10-13)
 
 - edit Master size
