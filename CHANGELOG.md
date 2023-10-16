@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.25 (2023-10-16)
+
+- get All Product Price => query Raw INNER JOIN
+
 ## v1.0.24 (2023-10-14)
 
 - get All Product Price

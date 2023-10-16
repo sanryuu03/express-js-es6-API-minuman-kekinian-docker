@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient, Prisma } from "@prisma/client"
 import { nanoid } from "nanoid"
 
 const prisma = new PrismaClient()
@@ -6,14 +6,18 @@ const prisma = new PrismaClient()
 let customUnix = Math.floor(new Date().getTime() / 1000.0)
 
 export const getAllProductPrice = async (req, res) => {
-    const { master_product_id } = req.params
     try {
-        const response = await prisma.Product_Price.findMany({
-            where: {
-                product_id: master_product_id,
-                deleted: false
-            }
-        })
+        const response = await prisma.$queryRaw(
+            Prisma.sql`SELECT PP.uuid, PP.product_id, PP.size_id, PP.is_promo, PP.price,
+            MP.name,
+            MS.size
+            FROM Product_Price AS PP
+            INNER JOIN Master_Product AS MP
+            ON MP.uuid = PP.product_id
+            INNER JOIN Master_Size AS MS
+            ON MS.uuid = PP.size_id
+            WHERE PP.deleted = false`
+          )
         const umpanBalik = {
             error: false,
             message: 'success',
