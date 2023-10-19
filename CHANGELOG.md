@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.27 (2023-10-19)
+
+- postShopAddToCart
+
 ## v1.0.26 (2023-10-19)
 
 - shopRoutes
