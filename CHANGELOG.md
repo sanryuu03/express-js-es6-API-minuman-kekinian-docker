@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.26 (2023-10-19)
+
+- shopRoutes
+- getShopProduct
+- getShopProductPrice
+
 ## v1.0.25 (2023-10-16)
 
 - get All Product Price => query Raw INNER JOIN
