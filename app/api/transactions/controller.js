@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient, Prisma } from "@prisma/client"
 import { nanoid } from "nanoid"
 
 const prisma = new PrismaClient()
@@ -7,11 +7,19 @@ let customUnix = Math.floor(new Date().getTime() / 1000.0)
 
 export const getTransactions = async (req, res) => {
     try {
-        const response = await prisma.Transactions.findMany({
-            where: {
-                deleted: false
-            }
-        })
+        const response = await prisma.$queryRaw(
+            Prisma.sql`SELECT trx.uuid, trx.is_promo, trx.quantity, trx.price, trx.amount, trx.buyer, trx.purchase_date,
+            MP.name,
+            MS.size
+            FROM Transactions AS trx
+            INNER JOIN Product_Price AS PP
+            ON trx.product_id = PP.product_id
+            INNER JOIN Master_Product AS MP
+            ON MP.uuid = PP.product_id
+            INNER JOIN Master_Size AS MS
+            ON MS.uuid = PP.size_id
+            WHERE PP.deleted = false`
+          )
         const umpanBalik = {
             error: false,
             message: 'success',

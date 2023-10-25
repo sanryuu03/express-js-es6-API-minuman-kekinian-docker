@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## v1.0.28 (2023-10-25)
+
+- get All Transactions => query Raw INNER JOIN
+
 ## v1.0.27 (2023-10-19)
 
 - postShopAddToCart
